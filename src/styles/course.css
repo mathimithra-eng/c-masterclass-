@@ -1,0 +1,85 @@
+.course-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  background: navy;
+}
+
+.slide-section {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  width: 100%;
+  display: block;
+  position: relative;
+  padding: 0;
+  background: transparent !important;
+}
+
+/* Custom scrollbar */
+.course-container::-webkit-scrollbar { width: 6px; }
+.course-container::-webkit-scrollbar-track { background: transparent; }
+.course-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6eb8f0, #6366f1);
+  border-radius: 10px;
+}
+.course-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #4fa8e8, #4f46e5);
+}
+
+/* FLOATING ANIMATION — idle bob */
+@keyframes float-idle {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-7px); }
+}
+
+/* All AnimCards float when idle */
+.cursor-pointer {
+  position: relative;
+  overflow: hidden;
+  animation: float-idle 3.8s ease-in-out infinite;
+  transition: transform 2s ease;
+}
+
+.cursor-pointer:hover {
+  animation: none !important;
+  transform: translateY(-10px) scale(1.03) !important;
+}
+
+/* Code block hover */
+.code-block-hover {
+  transition: transform 2s ease;
+  animation: float-idle 4.2s ease-in-out infinite;
+}
+.code-block-hover:hover {
+  transform: scale(1.012) translateY(-6px) !important;
+  animation: none !important;
+}
+
+tbody tr { transition: background 2s ease; }
+tbody tr:hover { background: rgba(148,200,255,0.12) !important; }
+
+.info-card-hover {
+  animation: float-idle 3.6s ease-in-out infinite;
+  transition: transform 2s ease;
+}
+.info-card-hover:hover {
+  transform: translateY(-10px) scale(1.025) !important;
+  animation: none !important;
+}
+
+.feature-card { animation: float-idle 4s ease-in-out infinite; }
+
+@keyframes pulse-ring {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+@keyframes shimmer-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-3px); }
+}
+
+/* Hide scrollbar for suggestion chips */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Globally remove all forms of shadow and keep the page bright */
+* {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  --tw-drop-shadow: none !important;
+  --tw-box-shadow: none !important;
+}
+
+/* Global smooth transitions for interactive elements */
+*, *::before, *::after {
+  transition-property: all !important;
+  transition-duration: 2s !important;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #05091a;
+}
+
